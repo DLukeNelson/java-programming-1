@@ -6,5 +6,11 @@ public class Counting {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int goal = Integer.valueOf(scanner.nextLine());
+        int counter = 0;
+        while (counter <= goal) {
+            System.out.println(counter);
+            counter += 1;
+        }
     }
 }
