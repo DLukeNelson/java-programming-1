@@ -8,7 +8,8 @@ public class FromWhereToWhere {
 
         System.out.print("Where to? ");
         int goal = Integer.valueOf(scanner.nextLine());
-        int counter = 1;
+        System.out.print("Where from? ");
+        int counter = Integer.valueOf(scanner.nextLine());
         while (counter <= goal) {
             System.out.println(counter);
             counter += 1;
