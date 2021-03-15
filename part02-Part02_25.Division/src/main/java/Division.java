@@ -11,5 +11,7 @@ public class Division {
         // division(3, 5);
     }
 
-    // implement the method here
+    public static void division(int numerator, int denominator) {
+        System.out.println(numerator * 1.0 / denominator);
+    }
 }
