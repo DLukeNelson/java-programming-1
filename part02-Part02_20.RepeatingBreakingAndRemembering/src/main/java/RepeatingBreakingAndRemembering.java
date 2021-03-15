@@ -13,6 +13,17 @@ public class RepeatingBreakingAndRemembering {
         // the parts you haven't done, but you'll get points for the finished parts.
         
         Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Give numbers:");
+        while (true) {
+            int number = Integer.valueOf(scanner.nextLine());
+            
+            if (number == -1) {
+                break;
+            }
+        }
+        
+        System.out.println("Thx! Bye!");
 
     }
 }
