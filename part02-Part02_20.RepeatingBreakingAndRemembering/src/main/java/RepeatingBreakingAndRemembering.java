@@ -15,6 +15,7 @@ public class RepeatingBreakingAndRemembering {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
         int totalNumbers = 0;
+        int evenNumbers = 0;
         
         System.out.println("Give numbers:");
         while (true) {
@@ -24,6 +25,9 @@ public class RepeatingBreakingAndRemembering {
                 break;
             }
             
+            if (number % 2 == 0) {
+                evenNumbers += 1;
+            }
             sum += number;
             totalNumbers += 1;
         }
@@ -33,6 +37,8 @@ public class RepeatingBreakingAndRemembering {
         System.out.println("Numbers: " + totalNumbers);
         double average = sum * 1.0 / totalNumbers;
         System.out.println("Average: " + average);
+        System.out.println("Even: " + evenNumbers);
+        System.out.println("Odd: " + (totalNumbers - evenNumbers));
 
     }
 }
