@@ -27,7 +27,11 @@ public class StarSign {
     }
 
     public static void printSquare(int size) {
-        // second part of the exercise
+        int numRows = size;
+        while (numRows > 0) {
+            printStars(size);
+            numRows -= 1;
+        }
     }
 
     public static void printRectangle(int width, int height) {
