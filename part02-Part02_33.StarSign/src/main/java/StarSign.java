@@ -42,6 +42,10 @@ public class StarSign {
     }
 
     public static void printTriangle(int size) {
-        // fourth part of the exercise
+        int row = 1;
+        while (row <= size) {
+            printStars(row);
+            row += 1;
+        }
     }
 }
