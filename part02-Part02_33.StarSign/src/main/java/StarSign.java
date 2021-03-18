@@ -19,7 +19,11 @@ public class StarSign {
     }
 
     public static void printStars(int number) {
-        // first part of the exercise
+        while (number > 0) {
+            System.out.print("*");
+            number -= 1;
+        }
+        System.out.println("");
     }
 
     public static void printSquare(int size) {
