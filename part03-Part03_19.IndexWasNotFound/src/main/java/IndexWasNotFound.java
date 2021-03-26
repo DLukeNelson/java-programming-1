@@ -17,9 +17,22 @@ public class IndexWasNotFound {
         array[7] = 7;
 
         System.out.print("Search for? ");
-        int searching = Integer.valueOf(scanner.nextLine());
+        int target = Integer.valueOf(scanner.nextLine());
 
         // Implement the search functionality here
+        int targetIndex = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                targetIndex = i;
+                break;
+            }
+        }
+        
+        if (targetIndex != -1) {
+            System.out.println(target + " is at index " + targetIndex + ".");
+        } else {
+            System.out.println(target + " was not found.");
+        }
     }
 
 }
