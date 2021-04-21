@@ -20,11 +20,17 @@ public class StoringRecords {
         }
     }
 
-    public static ArrayList<Person> readRecordsFromFile(String file) {
+    public static ArrayList<Person> readRecordsFromFile(String fileName) {
         ArrayList<Person> persons = new ArrayList<>();
-
-        // Write here the code for reading from file
-        // and printing the read records
+        try (Scanner fileScanner = new Scanner(Paths.get(fileName))) {
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine();
+                String[] parts = line.split(",");
+                persons.add(new Person(parts[0], Integer.valueOf(parts[1])));
+            }
+        } catch (Exception e) {
+            System.out.println("Unable to read file: " + fileName);
+        }
         return persons;
 
     }
