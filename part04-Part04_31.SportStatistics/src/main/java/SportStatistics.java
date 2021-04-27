@@ -16,14 +16,19 @@ public class SportStatistics {
         System.out.println("Team:");
         String team = scanner.nextLine();
         
-        int games = 0;
+        int wins = 0;
+        int losses = 0;
         for (SportStatistic record: records) {
-            if (team.equals(record.getWinningTeam()) || team.equals(record.getLosingTeam())) {
-                games += 1;
+            if (team.equals(record.getWinningTeam())) {
+                wins += 1;
+            } else if (team.equals(record.getLosingTeam())) {
+                losses += 1;
             }
         }
         
-        System.out.println("Games: " + games);
+        System.out.println("Games: " + (wins + losses));
+        System.out.println("Wins: " + wins);
+        System.out.println("Losses: " + losses);
 
     }
 
