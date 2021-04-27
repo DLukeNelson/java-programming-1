@@ -24,10 +24,24 @@ public class Counter {
     }
     
     public void increase() {
-        this.value += 1;
+        this.increase(1);
+    }
+    
+    public void increase(int amount) {
+        if (amount < 0) {
+            return;
+        }
+        this.value += amount;
     }
     
     public void decrease() {
-        this.value -= 1;
+        this.decrease(1);
+    }
+    
+    public void decrease(int amount) {
+        if (amount < 0) {
+            return;
+        }
+        this.value -= amount;
     }
 }
