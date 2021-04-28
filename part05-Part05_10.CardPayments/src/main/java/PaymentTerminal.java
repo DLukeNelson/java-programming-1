@@ -8,21 +8,27 @@ public class PaymentTerminal {
 
 
     public PaymentTerminal() {
-        // register initially has 1000 euros of money
+        this.money = 1000;
     }
 
     public double eatAffordably(double payment) {
-        // an affordable meal costs 2.50 euros
-        // increase the amount of cash by the price of an affordable mean and return the change
-        // if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
-        return -1;
+        double mealPrice = 2.50;
+        if (payment < mealPrice) {
+            return payment;
+        }
+        this.money += mealPrice;
+        this.affordableMeals += 1;
+        return payment - mealPrice;
     }
 
     public double eatHeartily(double payment) {
-        // a hearty meal costs 4.30 euros
-        // increase the amount of cash by the price of a hearty mean and return the change
-        // if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
-        return -1;
+        double mealPrice = 4.30;
+        if (payment < mealPrice) {
+            return payment;
+        }
+        this.money += mealPrice;
+        this.heartyMeals += 1;
+        return payment - mealPrice;
     }
 
 
