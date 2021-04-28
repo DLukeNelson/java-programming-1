@@ -20,6 +20,15 @@ public class PaymentTerminal {
         this.affordableMeals += 1;
         return payment - mealPrice;
     }
+    
+    public boolean eatAffordably(PaymentCard card) {
+        double mealPrice = 2.50;
+        boolean successful = card.takeMoney(mealPrice);
+        if (successful) {
+            this.affordableMeals += 1;
+        }
+        return successful;
+    }
 
     public double eatHeartily(double payment) {
         double mealPrice = 4.30;
@@ -29,6 +38,15 @@ public class PaymentTerminal {
         this.money += mealPrice;
         this.heartyMeals += 1;
         return payment - mealPrice;
+    }
+    
+    public boolean eatHeartily(PaymentCard card) {
+        double mealPrice = 4.30;
+        boolean successful = card.takeMoney(mealPrice);
+        if (successful) {
+            this.heartyMeals += 1;
+        }
+        return successful;
     }
 
 
