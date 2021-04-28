@@ -10,5 +10,9 @@ public class Apartment {
         this.squares = squares;
         this.princePerSquare = pricePerSquare;
     }
+    
+    public boolean largerThan(Apartment other) {
+        return this.squares > other.squares;
+    }
 
 }
