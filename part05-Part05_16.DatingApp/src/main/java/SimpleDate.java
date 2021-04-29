@@ -52,7 +52,11 @@ public class SimpleDate {
             this.advance();
         }
     }
-    
-    
+
+    public SimpleDate afterNumberOfDays(int howManyDays) {
+        SimpleDate after = new SimpleDate(this.day, this.month, this.year);
+        after.advance(howManyDays);
+        return after;
+    }
 
 }
