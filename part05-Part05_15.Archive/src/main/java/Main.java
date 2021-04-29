@@ -22,7 +22,9 @@ public class Main {
             }
             
             Item item = new Item(identifier, name);
-            items.add(item);
+            if (!items.contains(item)) {
+                items.add(item);
+            }
         }
         
         System.out.println("==Items==");
