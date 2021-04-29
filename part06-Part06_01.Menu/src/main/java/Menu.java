@@ -9,5 +9,9 @@ public class Menu {
         this.meals = new ArrayList<>();
     }
 
-    // implement the required methods here
+    public void addMeal(String meal) {
+        if (!this.meals.contains(meal)) {
+            this.meals.add(meal);
+        }
+    }
 }
