@@ -29,4 +29,11 @@ public class Stack {
     public ArrayList<String> values() {
         return this.strings;
     }
+    
+    public String take() {
+        int lastIndex = this.strings.size() - 1;
+        String value = this.strings.get(lastIndex);
+        this.strings.remove(lastIndex);
+        return value;
+    }
 }
