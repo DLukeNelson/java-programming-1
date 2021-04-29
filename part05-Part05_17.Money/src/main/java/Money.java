@@ -42,4 +42,22 @@ public class Money {
         }
         return this.euros < compared.euros;
     }
+    
+    public Money minus(Money decrease) {
+        int cents = this.cents - decrease.cents;
+        int euros = this.euros - decrease.euros;
+        
+        if (cents < 0) {
+            euros -= 1;
+            cents += 100;
+        }
+        
+        Money newMoney;
+        if (euros < 0) {
+            newMoney = new Money(0, 0);
+        } else {
+            newMoney = new Money(euros, cents);
+        }
+        return newMoney;
+    }
 }
