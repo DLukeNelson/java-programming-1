@@ -29,7 +29,15 @@ public class Suitcase {
     
     @Override
     public String toString() {
-        return this.items.size() + " items (" + this.weight() + " kg)";
+        String numItems = null;
+        if (this.items.size() == 0) {
+            numItems = "no items";
+        } else if (this.items.size() == 1) {
+            numItems = "1 item";
+        } else {
+            numItems = this.items.size() + " items";
+        }
+        return numItems + " (" + this.weight() + " kg)";
     }
     
     private int weight() {
