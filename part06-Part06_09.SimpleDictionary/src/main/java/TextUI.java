@@ -26,10 +26,21 @@ public class TextUI {
             
             if (command.equals("end")) {
                 break;
+            } else if (command.equals("add")) {
+                this.addWord();
+            } else {
+                System.out.println("Unknown command");
             }
-            System.out.println("Unknown command");
         }
         System.out.println("Bye bye!");
+    }
+    
+    private void addWord() {
+        System.out.print("Word: ");
+        String word = this.scanner.nextLine();
+        System.out.print("Translation: ");
+        String translation = this.scanner.nextLine();
+        this.dictionary.add(word, translation);
     }
     
 }
