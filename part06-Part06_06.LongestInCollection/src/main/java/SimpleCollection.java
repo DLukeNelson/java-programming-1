@@ -18,5 +18,17 @@ public class SimpleCollection {
     public ArrayList<String> getElements() {
         return this.elements;
     }
+    
+    public String longest() {
+        String longest = null;
+        int maxLength = -1;
+        for (String element: this.elements) {
+            if (element.length() > maxLength) {
+                longest = element;
+                maxLength = element.length();
+            }
+        }
+        return longest;
+    }
 
 }
