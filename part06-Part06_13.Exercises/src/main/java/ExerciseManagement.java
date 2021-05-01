@@ -3,26 +3,37 @@ import java.util.ArrayList;
 
 
 public class ExerciseManagement {
-    private ArrayList<String> exercises;
-    private ArrayList<String> completed;
+    private ArrayList<Exercise> exercises;
 
     public ExerciseManagement() {
         this.exercises = new ArrayList<>();
-        this.completed = new ArrayList<>();
     }
     public ArrayList<String> exerciseList() {
-        return this.exercises;
+        ArrayList<String> names = new ArrayList<>();
+        for (Exercise exercise: this.exercises) {
+            names.add(exercise.getName());
+        }
+        return names;
     }
     
-    public void add(String exercise) {
-        this.exercises.add(exercise);
+    public void add(String name) {
+        this.exercises.add(new Exercise(name));
     }
     
-    public void markAsCompleted(String exercise) {
-        this.completed.add(exercise);
+    public void markAsCompleted(String name) {
+        for (Exercise exercise: this.exercises) {
+            if (exercise.getName().equals(name)) {
+                exercise.setCompleted(true);
+            }
+        }
     }
     
-    public boolean isCompleted(String exercise) {
-        return this.completed.contains(exercise);
+    public boolean isCompleted(String name) {
+        for (Exercise exercise: this.exercises) {
+            if (exercise.getName().equals(name)) {
+                return exercise.isCompleted();
+            }
+        }
+        return false;
     }
 }
