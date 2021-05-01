@@ -29,4 +29,16 @@ public class Room {
     public ArrayList<Person> getPersons() {
         return this.persons;
     }
+    
+    public Person shortest() {
+        Person shortest = null;
+        int minHeight = Integer.MAX_VALUE;
+        for (Person person: this.persons) {
+            if (person.getHeight() < minHeight) {
+                shortest = person;
+                minHeight = person.getHeight();
+            }
+        }
+        return shortest;
+    }
 }
