@@ -28,6 +28,8 @@ public class TextUI {
                 break;
             } else if (command.equals("add")) {
                 this.addWord();
+            } else if (command.equals("search")) {
+                this.searchWord();
             } else {
                 System.out.println("Unknown command");
             }
@@ -41,6 +43,13 @@ public class TextUI {
         System.out.print("Translation: ");
         String translation = this.scanner.nextLine();
         this.dictionary.add(word, translation);
+    }
+    
+    private void searchWord() {
+        System.out.print("To be translated: ");
+        String word = this.scanner.nextLine();
+        String translation = this.dictionary.translate(word);
+        System.out.println("Translation: " + translation);
     }
     
 }
