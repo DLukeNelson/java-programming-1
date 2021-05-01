@@ -49,7 +49,12 @@ public class TextUI {
         System.out.print("To be translated: ");
         String word = this.scanner.nextLine();
         String translation = this.dictionary.translate(word);
-        System.out.println("Translation: " + translation);
+        
+        if (translation == null) {
+            System.out.println("Word " + word + " was not found");
+        } else {
+            System.out.println("Translation: " + translation);
+        }
     }
     
 }
