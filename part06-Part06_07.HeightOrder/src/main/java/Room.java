@@ -41,4 +41,12 @@ public class Room {
         }
         return shortest;
     }
+    
+    public Person take() {
+        Person shortest = this.shortest();
+        if (shortest != null) {
+            this.persons.remove(shortest);
+        }
+        return shortest;
+    }
 }
