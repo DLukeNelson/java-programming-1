@@ -40,6 +40,14 @@ public class LiquidContainers {
                 if (second > 100) {
                     second = 100;
                 }
+            } else if (command.equals("remove")) {
+                if (amount < 0) {
+                    continue;
+                }
+                second -= amount;
+                if (second < 0) {
+                    second = 0;
+                }
             }
 
         }
