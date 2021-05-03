@@ -31,6 +31,15 @@ public class LiquidContainers {
                 if (first > 100) {
                     first = 100;
                 }
+            } else if (command.equals("move")) {
+                if (amount > first) {
+                    amount = first;
+                }
+                first -= amount;
+                second += amount;
+                if (second > 100) {
+                    second = 100;
+                }
             }
 
         }
