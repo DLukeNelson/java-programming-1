@@ -1,4 +1,7 @@
 
+import java.util.Arrays;
+
+
 public class MainProgram {
 
     public static void main(String[] args) {
@@ -40,5 +43,14 @@ public class MainProgram {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
+    }
+    
+    public static void sort(int[] array) {
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length; i++) {
+            int smallestIndex = indexOfSmallestFrom(array, i);
+            swap(array, smallestIndex, i);
+            System.out.println(Arrays.toString(array));
+        }
     }
 }
