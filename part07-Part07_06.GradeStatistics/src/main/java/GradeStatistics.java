@@ -59,4 +59,41 @@ public class GradeStatistics {
         }
         return 100.0 * passing / this.gradePoints.size();
     }
+    
+    public String gradeDistribution() {
+        int[] grades = {0, 0, 0, 0, 0, 0};
+        for (int points: this.gradePoints) {
+            int grade = pointsToGrade(points);
+            grades[grade] += 1;
+        }
+        
+        String gradeDistribution = "";
+        for (int i = grades.length - 1; i >=0; i--) {
+            gradeDistribution += i + ": ";
+            for (int j = 0; j < grades[i]; j++) {
+                gradeDistribution += "*";
+            }
+            gradeDistribution += "\n";
+        }
+        return gradeDistribution;
+    }
+    
+    private int pointsToGrade(int points) {
+        if (points < 50) {
+            return 0;
+        }
+        if (points < 60) {
+            return 1;
+        }
+        if (points < 70) {
+            return 2;
+        }
+        if (points < 80) {
+            return 3;
+        }
+        if (points < 90) {
+            return 4;
+        }
+        return 5;
+    }
 }

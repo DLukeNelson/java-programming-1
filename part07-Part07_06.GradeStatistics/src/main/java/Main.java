@@ -23,5 +23,6 @@ public class Main {
         String averagePassingString = averagePassing < 0 ? "-" : ("" + averagePassing);
         System.out.println("Point average (passing): " + averagePassingString);
         System.out.println("Pass percentage: " + stats.passPercentage());
+        System.out.println("Grade distribution:\n" + stats.gradeDistribution());
     }
 }
