@@ -25,5 +25,15 @@ public class MainProgram {
         }
         return smallestIndex;
     }
+    
+    public static int indexOfSmallestFrom(int[] array, int startIndex) {
+        int smallestIndex = startIndex;
+        for (int i = startIndex; i < array.length; i++) {
+            if (array[i] < array[smallestIndex]) {
+                smallestIndex = i;
+            }
+        }
+        return smallestIndex;
+    }
 
 }
