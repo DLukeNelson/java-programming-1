@@ -19,5 +19,8 @@ public class Main {
         }
         
         System.out.println("Point average (all): " + stats.averagePoints());
+        double averagePassing = stats.averagePassing();
+        String averagePassingString = averagePassing < 0 ? "-" : ("" + averagePassing);
+        System.out.println("Point average (passing): " + averagePassingString);
     }
 }

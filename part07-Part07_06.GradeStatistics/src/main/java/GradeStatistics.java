@@ -29,4 +29,24 @@ public class GradeStatistics {
         }
         return sum * 1.0 / this.gradePoints.size();
     }
+    
+    public double averagePassing() {
+        int sum = 0;
+        int passing = 0;
+        for (int points: this.gradePoints) {
+            if (passed(points)) {
+                passing += 1;
+                sum += points;
+            }
+        }
+        if (passing > 0) {
+            return sum * 1.0 / passing;
+        } else {
+            return -1;
+        }
+    }
+    
+    private boolean passed(int points) {
+        return points >= 50;
+    }
 }
