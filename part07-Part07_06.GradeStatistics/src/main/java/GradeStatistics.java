@@ -49,4 +49,14 @@ public class GradeStatistics {
     private boolean passed(int points) {
         return points >= 50;
     }
+    
+    public double passPercentage() {
+        int passing = 0;
+        for (int points: this.gradePoints) {
+            if (passed(points)) {
+                passing += 1;
+            }
+        }
+        return 100.0 * passing / this.gradePoints.size();
+    }
 }
