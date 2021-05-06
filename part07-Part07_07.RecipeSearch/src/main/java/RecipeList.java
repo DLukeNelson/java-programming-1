@@ -43,4 +43,14 @@ public class RecipeList {
         }
         return listRecipesFrom(matches);
     }
+    
+    public String timesLessThan(int maxTime) {
+        ArrayList<Recipe> shortEnough = new ArrayList<>();
+        for (Recipe recipe: this.recipes) {
+            if (recipe.getCookingTime() <= maxTime) {
+                shortEnough.add(recipe);
+            }
+        }
+        return listRecipesFrom(shortEnough);
+    }
 }

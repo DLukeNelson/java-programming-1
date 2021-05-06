@@ -34,4 +34,8 @@ public class Recipe {
     public String getName() {
         return this.name;
     }
+    
+    public int getCookingTime() {
+        return this.cookingTime;
+    }
 }
