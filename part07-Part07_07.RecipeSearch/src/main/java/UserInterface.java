@@ -67,6 +67,7 @@ public class UserInterface {
             System.out.println("stop - stops the program");
             System.out.println("find name - searches recipes by name");
             System.out.println("find cooking time - searches recipes by cooking time");
+            System.out.println("find ingredient - searches recipes by ingredient");
             System.out.print("\nEnter command: ");
             String command = this.scanner.nextLine();
 
@@ -78,6 +79,8 @@ public class UserInterface {
                 findName();
             } else if (command.equals("find cooking time")) {
                 findCookingTime();
+            } else if (command.equals("find ingredient")) {
+                findIngredient();
             }
         }
     }
@@ -98,5 +101,12 @@ public class UserInterface {
         int maxTime = Integer.valueOf(scanner.nextLine());
         System.out.println("Recipes: ");
         System.out.println(recipeList.timesLessThan(maxTime));
+    }
+    
+    private void findIngredient() {
+        System.out.println("Ingredient: ");
+        String ingredient = scanner.nextLine();
+        System.out.println("Recipes: ");
+        System.out.println(recipeList.recipesUsingIngredient(ingredient));
     }
 }

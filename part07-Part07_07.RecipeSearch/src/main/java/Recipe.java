@@ -38,4 +38,13 @@ public class Recipe {
     public int getCookingTime() {
         return this.cookingTime;
     }
+    
+    public boolean usesIngredient(String target) {
+        for (String ingredient: this.ingredients) {
+            if (ingredient.equals(target)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

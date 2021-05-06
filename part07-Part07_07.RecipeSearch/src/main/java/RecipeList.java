@@ -53,4 +53,14 @@ public class RecipeList {
         }
         return listRecipesFrom(shortEnough);
     }
+    
+    public String recipesUsingIngredient(String ingredient) {
+        ArrayList<Recipe> hasIngredient = new ArrayList<>();
+        for (Recipe recipe: this.recipes) {
+            if (recipe.usesIngredient(ingredient)) {
+                hasIngredient.add(recipe);
+            }
+        }
+        return listRecipesFrom(hasIngredient);
+    }
 }
