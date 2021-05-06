@@ -28,7 +28,7 @@ public class UserInterface {
     }
     
     private void getRecipes() {
-        System.out.println("File to read: ");
+        System.out.print("File to read: ");
         String fileName = scanner.nextLine();
         try (Scanner fileScanner = new Scanner(Paths.get(fileName))) {
             readRecipes(fileScanner);
@@ -64,19 +64,29 @@ public class UserInterface {
         while (true) {
             System.out.println("Commands:");
             System.out.println("list - lists the recipes");
-            System.out.println("stop - stops the program\n");
-            System.out.println("Enter command: ");
+            System.out.println("stop - stops the program");
+            System.out.println("find name - searches recipes by name");
+            System.out.print("\nEnter command: ");
             String command = this.scanner.nextLine();
 
             if (command.equals("stop")) {
                 break;
-            } else if(command.equals("list")) {
+            } else if (command.equals("list")) {
                 list();
+            } else if (command.equals("find name")) {
+                findName();
             }
         }
     }
     
     private void list() {
         System.out.println(recipeList.listRecipes());
+    }
+    
+    private void findName() {
+        System.out.print("Searched word: ");
+        String target = scanner.nextLine();
+        System.out.println("Recipes: ");
+        System.out.println(recipeList.searchNames(target));
     }
 }

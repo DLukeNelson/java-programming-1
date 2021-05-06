@@ -30,4 +30,8 @@ public class Recipe {
     public String toString() {
         return this.name + ", cooking time: " + this.cookingTime;
     }
+    
+    public String getName() {
+        return this.name;
+    }
 }

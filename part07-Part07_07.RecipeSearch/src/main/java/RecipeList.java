@@ -22,11 +22,25 @@ public class RecipeList {
         this.recipes.add(recipe);
     }
     
-    public String listRecipes() {
+    private String listRecipesFrom(ArrayList<Recipe> recipes) {
         String description = "";
-        for (Recipe recipe: this.recipes) {
+        for (Recipe recipe: recipes) {
             description += recipe.toString() + "\n";
         }
         return description;
+    }
+    
+    public String listRecipes() {
+        return listRecipesFrom(this.recipes);
+    }
+    
+    public String searchNames(String name) {
+        ArrayList<Recipe> matches = new ArrayList<>();
+        for (Recipe recipe: this.recipes) {
+            if (recipe.getName().contains(name)) {
+                matches.add(recipe);
+            }
+        }
+        return listRecipesFrom(matches);
     }
 }
